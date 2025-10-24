@@ -42,7 +42,7 @@ When any of these methods attempt to move a blocked item into a container, the a
 
 - **Platform**: Fabric
 - **Language**: Java
-- **Minecraft Version**: 1.21.8 and higher
+- **Minecraft Version**: 1.21.10 and higher
 - **Implementation**: Uses Mixin injection to modify vanilla behavior
 
 ## Installation
