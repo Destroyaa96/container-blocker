@@ -8,8 +8,12 @@ A lightweight Minecraft Fabric mod that prevents configured items from being pla
 - **Blocks manual placement**: Prevents players from clicking blocked items into container slots (chests, barrels, hoppers, etc.)
 - **Blocks shift-clicking**: Prevents players from shift-clicking blocked items from their inventory into containers
 - **Blocks hoppers**: Prevents hoppers from transferring blocked items between containers
+- **Blocks item frames**: Prevents placing blocked items in regular and glow item frames
+- **Blocks decorated pots**: Prevents placing blocked items in decorated pots
+- **Blocks chiseled bookshelves**: Prevents placing blocked items in chiseled bookshelves
 - **Works with all containers**: Applies to all container types including chests, barrels, shulker boxes, hoppers, and modded containers
 - **Player inventory allowed**: Blocked items can still be moved within the player's own inventory and hotbar
+- **Precise targeting**: Only blocks specific container interactions, other block placements work normally
 
 ## Configuration
 
@@ -29,6 +33,8 @@ The mod creates a `config/blocked_items.json` file on first run. You can edit th
 The mod uses Mixins to intercept item transfer methods:
 - **ScreenHandlerMixin**: Intercepts manual clicking and shift-clicking in container GUIs
 - **HopperBlockEntityMixin**: Intercepts hopper item transfers, extraction, and merging
+- **PlayerInteractBlockMixin**: Intercepts block interactions with decorated pots and chiseled bookshelves
+- **PlayerInteractEntityMixin**: Intercepts entity interactions with item frames (regular and glow)
 
 When any of these methods attempt to move a blocked item into a container, the action is cancelled.
 
@@ -36,7 +42,7 @@ When any of these methods attempt to move a blocked item into a container, the a
 
 - **Platform**: Fabric
 - **Language**: Java
-- **Minecraft Version**: 1.21.2 and higher
+- **Minecraft Version**: 1.21.8 and higher
 - **Implementation**: Uses Mixin injection to modify vanilla behavior
 
 ## Installation
