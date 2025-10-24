@@ -6,6 +6,10 @@
     "ScreenHandlerMixin",
     "HopperBlockEntityMixin"
   ],
+  "client": [
+    "PlayerInteractBlockMixin",
+    "PlayerInteractEntityMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

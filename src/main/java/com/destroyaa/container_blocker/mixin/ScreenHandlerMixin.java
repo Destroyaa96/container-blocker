@@ -52,5 +52,18 @@ public abstract class ScreenHandlerMixin {
                 }
             }
         }
+        
+        if (actionType == SlotActionType.SWAP && slotIndex >= 0) {
+            Slot slot = getSlot(slotIndex);
+            
+            if (slot.inventory != player.getInventory()) {
+                ItemStack hotbarStack = player.getInventory().getStack(button);
+                
+                if (BlockedItemsConfig.isBlocked(hotbarStack.getItem())) {
+                    ci.cancel();
+                    return;
+                }
+            }
+        }
     }
 }
