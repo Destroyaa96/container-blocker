@@ -51,8 +51,8 @@ public class BlockedItemsConfig {
                 LOGGER.info("Loading {} blocked item(s)", config.blockedItems.size());
                 for (String itemId : config.blockedItems) {
                     try {
-                        Identifier id = Identifier.tryParse(itemId);
-                        if (id != null && Registries.ITEM.containsId(id)) {
+                        Identifier id = Identifier.of(itemId);
+                        if (Registries.ITEM.containsId(id)) {
                             Item item = Registries.ITEM.get(id);
                             blockedItems.add(item);
                             LOGGER.info("✓ Blocking item: {} ({})", itemId, item.toString());
