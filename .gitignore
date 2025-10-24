@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+out/
+bin/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Minecraft run directory
+run/
+
+# Fabric
+remappedSrc/
+*.jar

@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.destroyaa.container_blocker.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ScreenHandlerMixin",
+    "HopperBlockEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

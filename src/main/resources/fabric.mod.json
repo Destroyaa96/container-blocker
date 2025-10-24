@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "container-blocker",
+  "version": "${version}",
+  "name": "Container Blocker",
+  "description": "Stops configured items from entering containers/hoppers",
+  "authors": ["Destroyaa"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/container-blocker/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.destroyaa.container_blocker.client.ContainerBlockerClient"
+    ],
+    "main": [
+      "com.destroyaa.container_blocker.ContainerBlocker"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "mixins": [
+    "container_blocker.mixins.json"
+  ]
+}
