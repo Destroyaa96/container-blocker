@@ -2,8 +2,9 @@ package com.destroyaa.container_blocker.mixin;
 
 import com.destroyaa.container_blocker.config.BlockedItemsConfig;
 import net.minecraft.block.Block;
-import net.minecraft.block.ChiseledBookshelfBlock;
 import net.minecraft.block.DecoratedPotBlock;
+import net.minecraft.block.ShelfBlock;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.item.ItemStack;
@@ -17,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ClientPlayerInteractionManager.class)
 public abstract class PlayerInteractBlockMixin {
-    
+
     @Inject(
         method = "interactBlock",
         at = @At("HEAD"),
@@ -32,11 +33,11 @@ public abstract class PlayerInteractBlockMixin {
         ItemStack heldStack = player.getStackInHand(hand);
         
         if (BlockedItemsConfig.isBlocked(heldStack.getItem())) {
-            Block block = player.getWorld().getBlockState(hitResult.getBlockPos()).getBlock();
+            Block block = MinecraftClient.getInstance().world.getBlockState(hitResult.getBlockPos()).getBlock();
             
-            // Only prevent interaction with pots and chiseled bookshelves
-            if (block instanceof DecoratedPotBlock || block instanceof ChiseledBookshelfBlock) {
-                cir.setReturnValue(ActionResult.PASS);
+            // Prevent interaction with pots and shelves
+            if (block instanceof DecoratedPotBlock || block instanceof ShelfBlock) {
+                cir.setReturnValue(ActionResult.FAIL);
             }
         }
     }

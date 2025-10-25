@@ -23,6 +23,7 @@
     "minecraft": "~1.21"
   },
   "mixins": [
-    "container_blocker.mixins.json"
+    "container_blocker.mixins.json",
+    "container_blocker.client.mixins.json"
   ]
 }

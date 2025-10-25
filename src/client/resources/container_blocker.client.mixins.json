@@ -2,10 +2,10 @@
   "required": true,
   "package": "com.destroyaa.container_blocker.mixin",
   "compatibilityLevel": "JAVA_21",
-  "refmap": "container-blocker-refmap.json",
-  "mixins": [
-    "ScreenHandlerMixin",
-    "HopperBlockEntityMixin"
+  "refmap": "client-container-blocker-refmap.json",
+  "client": [
+    "PlayerInteractBlockMixin",
+    "PlayerInteractEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -26,6 +26,10 @@ loom {
             sourceSet sourceSets.client
         }
     }
+    
+    mixin {
+        defaultRefmapName = "container-blocker-refmap.json"
+    }
 }
 
 repositories {

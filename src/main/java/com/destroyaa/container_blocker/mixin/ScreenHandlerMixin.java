@@ -19,7 +19,7 @@ public abstract class ScreenHandlerMixin {
     public abstract Slot getSlot(int index);
 
     @Inject(
-        method = "internalOnSlotClick",
+        method = "onSlotClick",
         at = @At("HEAD"),
         cancellable = true
     )
