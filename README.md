@@ -10,7 +10,7 @@ A lightweight Minecraft Fabric mod that prevents configured items from being pla
 - **Blocks hoppers**: Prevents hoppers from transferring blocked items between containers
 - **Blocks item frames**: Prevents placing blocked items in regular and glow item frames
 - **Blocks decorated pots**: Prevents placing blocked items in decorated pots
-- **Blocks chiseled bookshelves**: Prevents placing blocked items in chiseled bookshelves
+- **Blocks shelves**: Prevents placing blocked items in shelves (all wood variants: oak, birch, spruce, jungle, acacia, dark oak, mangrove, cherry, bamboo, crimson, warped)
 - **Works with all containers**: Applies to all container types including chests, barrels, shulker boxes, hoppers, and modded containers
 - **Player inventory allowed**: Blocked items can still be moved within the player's own inventory and hotbar
 - **Precise targeting**: Only blocks specific container interactions, other block placements work normally
@@ -33,7 +33,7 @@ The mod creates a `config/blocked_items.json` file on first run. You can edit th
 The mod uses Mixins to intercept item transfer methods:
 - **ScreenHandlerMixin**: Intercepts manual clicking and shift-clicking in container GUIs
 - **HopperBlockEntityMixin**: Intercepts hopper item transfers, extraction, and merging
-- **PlayerInteractBlockMixin**: Intercepts block interactions with decorated pots and chiseled bookshelves
+- **PlayerInteractBlockMixin**: Intercepts block interactions with decorated pots and shelves
 - **PlayerInteractEntityMixin**: Intercepts entity interactions with item frames (regular and glow)
 
 When any of these methods attempt to move a blocked item into a container, the action is cancelled.
@@ -51,6 +51,8 @@ When any of these methods attempt to move a blocked item into a container, the a
 2. Place the mod JAR file in your `.minecraft/mods` folder
 3. Launch Minecraft
 4. Edit `config/blocked_items.json` to configure blocked items (optional)
+
+**Note**: This mod requires installation on **both client and server** for full functionality. The shelf/pot blocking features require the client-side component.
 
 ## Building from Source
 
